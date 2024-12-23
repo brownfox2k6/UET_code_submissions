@@ -1,6 +1,3 @@
-// 24021400 Nguyen Trong Dai
-// q01.cpp
-
 #include <iostream>
 using namespace std;
 
