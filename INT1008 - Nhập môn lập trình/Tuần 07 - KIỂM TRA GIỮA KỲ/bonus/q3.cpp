@@ -18,9 +18,9 @@ signed main() {
     }
   }
 
-  double tbc = 1.0 * tong / dem;
+  double tbc = dem? (1.0 * tong / dem) : 0;
   for (int x : a) {
-    if (x % 2 == 1 && (dem == 0 || x > tbc)) {
+    if (x % 2 == 1 && x > tbc) {
       cout << x << ' ';
     }
   }
