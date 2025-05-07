@@ -15,7 +15,7 @@ for (int i = 1; 2*i <= n; ) {
 }
 ```
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
   
 Ta thấy `i` bắt đầu chạy từ `1`, sau mỗi vòng lặp, `i` có thể nhận giá trị mới là `2*i`, `2*i + 1` hoặc `i+n`. Trong trường hợp tệ nhất, coi như `i` tăng gấp đôi sau mỗi vòng lặp. Vậy độ phức tạp của đoạn mã là $\mathcal{O}(\log n)$.
 </details>
@@ -23,7 +23,7 @@ Ta thấy `i` bắt đầu chạy từ `1`, sau mỗi vòng lặp, `i` có thể
 ## Câu 2 `(1 điểm)`
 Cho một cấu trúc ngăn xếp với các thao tác cơ bản `push()`, `pop()`, `isEmpty()`. Hãy cài đặt một thao tác lấy ra phần tử thứ $k$ tính từ đỉnh ngăn xếp (đỉnh ngăn xếp là phần tử thứ nhất) và trả lại ngăn xếp với thứ tự các phần tử còn lại không thay đổi.
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
 
 Gọi ngăn xếp đang thao tác là `st`, ta sử dụng thêm một ngăn xếp phụ là `tmp` và thực hiện các bước sau:
 - Bước 1: Lần lượt lấy $k-1$ phần tử đầu tiên của `st` chuyển vào `tmp`;
@@ -58,7 +58,7 @@ Data popKthElement(Stack &st) {
 
 **b.** Cho heap max nhị phân hiện nằm trong mảng có giá trị lần lượt là `10 9 7 4 3 6`. Hãy minh hoạ từng bước quá trình lấy key lớn nhất ra khỏi heap.
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
 
 **a.**
 
@@ -74,7 +74,7 @@ Data popKthElement(Stack &st) {
 
 **b.** Thực hiện với dữ liệu trên để tạo cây tìm kiếm nhị phân cân bằng AVL. Vẽ các bước trung gian để thấy được việc xoay cây nếu có.
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
 
 **a.**
 
@@ -92,7 +92,7 @@ Cho một hàm băm $h(x) = x \bmod 13$. Hãy tạo bảng băm kích thước $
 
 **b.** Bằng phương pháp địa chỉ mở
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
 
 Ta có bảng sau:
 
@@ -127,7 +127,7 @@ Giải thích:
 
 **b.** Giả sử đã có hàm sắp xếp quicksort sử dụng giá trị chốt là phần tử cuối mảng. Hãy nêu giải pháp chỉnh sửa tối thiểu để thành hàm sắp xếp quicksort với giá trị chốt là phần tử ngẫu nhiên.
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
 
 **a.**
 
@@ -149,7 +149,7 @@ Cho đồ thị có hướng như hình dưới, trong đó các số là độ 
 
 **b.** Điều gì sẽ xảy ra nếu bổ sung thêm cạnh `D → B` có trọng số $-4$ vào đồ thị?
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
 
 **a.**
 
@@ -175,7 +175,7 @@ Nếu thêm cạnh `D → B` có trọng số $-4$ vào đồ thị, đồ thị
 ## Câu 8 `(1 điểm)`
 Một khu vui chơi có $N$ địa điểm, giữa một số địa điểm có đường đi với cự li nào đó đã biết. Giả sử chỉ ở một số địa điểm biết trước có quầy bán nước. Hãy trình bày ý tưởng một thuật toán hiệu quả để xác định khoảng cách từ một địa điểm bất kỳ trong khu vui chơi đến địa điểm có quầy bán nước gần nhất.
 
-<details><summary>Bài giải</summary>
+<details><summary><strong>Bài giải</strong></summary>
 
 Coi khu vui chơi là một đơn đồ thị vô hướng có $N$ đỉnh. Gọi $A$ là tập hợp các đỉnh mà tại đó có máy bán nước. Gọi đỉnh cần xác định khoảng cách đến đỉnh gần nhất có máy bán nước là $x$. Nếu $x \in A$ thì trả về $0$ luôn vì tại $x$ đã có máy bán nước. Ngược lại, vì đường đi không có trọng số âm nên ta sử dụng thuật toán Dijkstra để tìm đường đi ngắn nhất từ $x$ tới các đỉnh còn lại của đồ thị. Sau đó, ta duyệt từng đỉnh $y$ trong $A$ để tìm khoảng cách ngắn nhất từ $x$ đến $y$.
 </details>
