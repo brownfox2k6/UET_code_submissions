@@ -21,7 +21,7 @@ Ta thấy `i` bắt đầu chạy từ `1`, sau mỗi vòng lặp, `i` có thể
 </details>
 
 ## Câu 2 `(1 điểm)`
-Cho một cấu trúc ngăm xếp với các thao tác cơ bản `push()`, `pop()`, `isEmpty()`. Hãy cài đặt một thao tác lấy ra phần tử thứ $k$ tính từ đỉnh ngăn xếp (đỉnh ngăn xếp là phần tử thứ nhất) và trả lại ngăn xếp với thứ tự các phần tử còn lại không thay đổi.
+Cho một cấu trúc ngăn xếp với các thao tác cơ bản `push()`, `pop()`, `isEmpty()`. Hãy cài đặt một thao tác lấy ra phần tử thứ $k$ tính từ đỉnh ngăn xếp (đỉnh ngăn xếp là phần tử thứ nhất) và trả lại ngăn xếp với thứ tự các phần tử còn lại không thay đổi.
 
 <details><summary>Bài giải</summary>
 
@@ -135,7 +135,9 @@ Giải thích:
 - Thuật toán merge sort cần dùng mảng phụ còn thuật toán quicksort thì không.
 - Thuật toán merge sort là thuật toán sắp xếp ổn định còn thuật toán quicksort thì không.
 
-**b.** Khi sử dụng thuật toán quicksort mà chọn giá trị chốt là phần tử cuối mảng cho một mảng được sắp xếp ngược lại, ví dụ sắp xếp tăng dần cho mảng `[5, 4, 3, 2, 1]`, ta sẽ rơi vào trường hợp xấu nhất của thuật toán này. Khi đó độ phức tạp thuật toán lên tới $\mathcal{O}(n^2)$. Để khắc phục điều này, ta xáo trộn ngẫu nhiên mảng trước khi đưa vào sắp xếp, khi đó giá trị chốt được chọn coi như là ngẫu nhiên.
+**b.**
+
+Khi sử dụng thuật toán quicksort mà chọn giá trị chốt là phần tử cuối mảng cho một mảng được sắp xếp ngược lại, ví dụ sắp xếp tăng dần cho mảng `[5, 4, 3, 2, 1]`, ta sẽ rơi vào trường hợp xấu nhất của thuật toán này. Khi đó độ phức tạp thuật toán lên tới $\mathcal{O}(n^2)$. Để khắc phục điều này, ta xáo trộn ngẫu nhiên mảng trước khi đưa vào sắp xếp, khi đó giá trị chốt được chọn coi như là ngẫu nhiên.
 </details>
 
 ## Câu 7 `(1,5 điểm)`
@@ -150,7 +152,8 @@ Cho đồ thị có hướng như hình dưới, trong đó các số là độ 
 <details><summary>Bài giải</summary>
 
 **a.**
-Gọi $d(x)$ là tổng trọng số nhỏ nhất của đường đi từ đỉnh `S` tới đỉnh $x$
+
+Gọi $d(x)$ là tổng trọng số nhỏ nhất của đường đi từ đỉnh `S` tới đỉnh $x$.
 
 | Vòng lặp | $d(S)$ | $d(A)$   | $d(B)$   | $d(C)$   | $d(D)$   |
 | -------- | ------ | -------- | -------- | -------- | -------- |
@@ -160,9 +163,11 @@ Gọi $d(x)$ là tổng trọng số nhỏ nhất của đường đi từ đỉ
 | $3$      | $0$    | $4$      | $7$      | $9$      | $11$     |
 | $4$      | $0$    | $4$      | $7$      | $9$      | $10$     |
 
-Sau khi chạy thuật toán Bellman-Ford, ta có $d(S)=0$, $d(A)=4$, $d(B)=7$, $d(C)=9$ và $d(D)=10$
+Sau khi chạy thuật toán Bellman-Ford, ta có $d(S)=0$, $d(A)=4$, $d(B)=7$, $d(C)=9$ và $d(D)=10$.
 
-**b.** Nếu thêm cạnh `D → B` có trọng số $-4$ vào đồ thị, đồ thị sẽ có chu trình âm (có tổng trọng số là $-1$). Khi đó không tồn tại định nghĩa đường đi ngắn nhất và không thể áp dụng thuật toán Bellman-Ford hay thuật toán nào khác để tìm đường đi ngắn nhất.
+**b.**
+
+Nếu thêm cạnh `D → B` có trọng số $-4$ vào đồ thị, đồ thị sẽ có chu trình âm (có tổng trọng số là $-1$). Khi đó không tồn tại định nghĩa đường đi ngắn nhất và không thể áp dụng thuật toán Bellman-Ford hay thuật toán nào khác để tìm đường đi ngắn nhất.
 
 ![image](https://github.com/user-attachments/assets/c3d70a2b-a758-4062-a0a1-177970819d16)
 </details>
