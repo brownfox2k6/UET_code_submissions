@@ -26,30 +26,37 @@ Cho một cấu trúc ngăn xếp với các thao tác cơ bản `push()`, `pop(
 <details><summary><strong>Bài giải</strong></summary>
 
 Gọi ngăn xếp đang thao tác là `st`, ta sử dụng thêm một ngăn xếp phụ là `tmp` và thực hiện các bước sau:
-- Bước 1: Lần lượt lấy $k-1$ phần tử đầu tiên của `st` chuyển vào `tmp`;
-- Bước 2: Lúc này, phần tử đầu tiên của `st` chính là phần tử thứ `k` của ngăn xếp ban đầu, lưu lại và xoá đi phần tử này;
+- Bước 1: Lần lượt lấy $k$ phần tử đầu tiên của `st` chuyển vào `tmp`;
+- Bước 2: Lúc này, đỉnh của ngăn xếp phụ `tmp` chính là phần tử thứ `k` của ngăn xếp ban đầu, lưu lại và xoá đi phần tử này;
 - Bước 3: Lần lượt chuyển lại các phần tử của `tmp` vào `st`.
 
-Ta cần chú ý xử lý báo lỗi khi truy xuất hoặc lấy ra đỉnh ngăn xếp trong khi ngăn xếp rỗng.
+Ta cần chú ý xử lý trường hợp truy xuất hoặc lấy ra đỉnh ngăn xếp trong khi ngăn xếp rỗng. Khi xảy ra lỗi, ta khôi phục lại ngăn xếp ngăn đầu và trả về giá trị NULL.
 
 **Cài đặt**
 ```cpp
-Data popKthElement(Stack &st) {
-    Stack tmp;
-    for (int i = 0; i < k-1; ++i) {
-        if (st.isEmpty()) throw Error;
-        tmp.push(st[0]);
-        st.pop();
+Data popKthElement(Stack &st, int k) {
+  if (k <= 0) {
+    return NULL;
+  }
+  Stack tmp;
+  Data data = NULL;
+  while (k--) {
+    if (st.isEmpty()) {
+      goto end;
     }
-    if (st.isEmpty()) throw Error;
-    Data data = st[0];
+    tmp.push(st[0]);
     st.pop();
-    for (int i = 0; i < k-1; ++i) {
-        st.push(tmp[0]);
-        tmp.pop();
-    }
-    return data;
+  }
+  data = tmp[0];
+  tmp.pop();
+end:
+  while (!tmp.isEmpty()) {
+    st.push(tmp[0]);
+    tmp.pop();
+  }
+  return data;
 }
+
 ```
 </details>
 
