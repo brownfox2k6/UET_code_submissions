@@ -78,7 +78,9 @@ Tạo struct/class `Fraction` có hàm `greater()`, trả về true nếu phân 
 
 <details><summary><strong>Cách làm (tóm tắt)</strong></summary>
 
-Để so sánh phân số `F = a/b` với phân số `G = c/d`, ta lấy `F-G = H = (a*d - b*c) / (c*d)`, nếu `H` dương tức là `F > G`. Một phân số là dương khi tử nhân mẫu là dương.
+Để so sánh phân số `F = a/b` với phân số `G = c/d`, ta lấy `F-G = (a*d - b*c) / (c*d)`, nếu `F-G > 0` tức là `F > G`. Một phân số là dương khi tử nhân mẫu là dương.
+
+Chú ý dùng kiểu dữ liệu `long long` để tránh bị tràn số khi nhân hai số với nhau.
 </details>
 
 <details><summary><strong>Code (C++)</strong></summary>
