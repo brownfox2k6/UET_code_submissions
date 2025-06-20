@@ -36,9 +36,11 @@ Viết chương trình: Cho một mảng $a$ có $n$ phần tử, đếm xem tro
 
 <details><summary><strong>Cách làm (tóm tắt)</strong></summary>
 
-Cần biết đến kỹ thuật mảng cộng dồn (prefix sum). `pref[0] = 0`, `pref[i]` lưu tổng của `a[0]` đến `a[i - 1]`, lấy phần dư khi chia cho `k`.
+Trong phần trình bày này, coi chỉ số của mảng `a` bắt đầu từ 1, không phải là từ 0 như thông thường.
 
-Suy ra, tổng của `a[l]` đến `a[r]` là `pref[r] - pref[l-1]`. Để tổng này chia hết cho k tức `pref[r] - pref[l-1] = 0`, tương đương `pref[r] = pref[l]`.
+Cần biết đến kỹ thuật mảng cộng dồn (prefix sum). `pref[0] = 0`, `pref[i]` lưu tổng của `a[1]` đến `a[i]`. Suy ra, tổng của `a[l]` đến `a[r]` là `pref[r] - pref[l-1] = X`. Để tổng của đoạn `a[l]` đến `a[r]` chia hết cho `k` thì `X` chia hết cho `k`.
+
+Bây giờ, cải tiến: `pref[i]` lưu tổng của `a[1]` đến `a[i]`, đồng thời lấy phần dư khi chia cho `k`. Khi này, để tổng của đoạn `a[l]` đến `a[r]` chia hết cho `k` thì `X = 0`, tức `pref[r] = pref[l-1]`.
 
 Bài toán trở thành: đếm số cặp phần tử bằng nhau trong `pref`.
 
