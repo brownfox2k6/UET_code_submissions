@@ -1,6 +1,6 @@
-[submodule "INT2215 - Lập trình nâng cao/TetrisGame"]
-	path = INT2215 - Lập trình nâng cao/TetrisGame
-	url = https://github.com/brownfox2k6/TetrisGame
 [submodule "INT2204 - Lập trình hướng đối tượng/LibraryManagementApplication"]
 	path = INT2204 - Lập trình hướng đối tượng/LibraryManagementApplication
-	url = https://github.com/brownfox2k6/LibraryManagementApplication
+	url = https://github.com/brownfox2k6/LibraryManagementApplication.git
+[submodule "INT2215 - Lập trình nâng cao/TetrisGame"]
+	path = INT2215 - Lập trình nâng cao/TetrisGame
+	url = https://github.com/brownfox2k6/TetrisGame.git
