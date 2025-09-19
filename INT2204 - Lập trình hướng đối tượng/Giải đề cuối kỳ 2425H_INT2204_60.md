@@ -160,14 +160,46 @@ class Student {
 <details><summary><strong>Bài giải</strong></summary>
 
 - Ngữ cảnh sử dụng: khi cần đảm bảo một lớp chỉ có duy nhất một đối tượng, ví dụ: lớp quản lý cấu hình, kết nối cơ sở dữ liệu, logger.
-
+- Giải pháp:
+  - Ẩn constructor để ngăn việc khởi tạo đối tượng từ bên ngoài.
+  - Cung cấp phương thức truy cập tĩnh để lấy đối tượng duy nhất.
+  - Đảm bảo chỉ có nhiều nhất một instance được tạo ra trong suốt quá trình chạy.
+- Code:
+``` java
+public class Singleton {
+  private static Singleton instance;
+  private Singleton() {}
+  public static Singleton getInstance() {
+    if (instance == null) {
+      instance = new Singleton();
+    }
+    return instance;
+  }
+}
+```
 </details>
 
 ---
 **2.** Trong một hệ thống quản lý người dùng, mỗi vai trò (ví dụ: "Admin", "User") chỉ được phép có một trình quản lý duy nhất để kiểm soát hành vi của vai trò đó. Hãy cài đặt bằng Java một phiên bản mở rộng của Singleton (theo hướng Multiton) để đáp ứng yêu cầu trên. `(1 điểm)`
 
+<details><summary><strong>Bài giải</strong></summary>
+
+``` java
+public class User {
+  private static Map<String, User> instances = new HashMap<>();
+  private User() {}
+  public static User getInstance(String role) {
+    if (!instances.containsKey(role)) {
+      instances.put(role, new User());
+    }
+    return instances.get(role);
+  }
+}
+```
+</details>
+
 ## Câu 4
-Một ngân hàng cho phép người dùng lập các loại tài khoản bao gồm: `NormalAccount`, `NickelNDime`, `Gambler`. Thông tin về mỗi tài khoản ngân hàng gồm có số dư hiện tại và số giao dịch đã thực hiện kể từ đầu tháng. Mỗi tài khoản cần đáp ứng các thao tác sau: gửi tiền, rút tiền, và lấy thông tin phí tài khoản trong tháng gần nhất. Phí tài khoản được tính tuỳ theo từng loại tại khoản. Loại `NormalAccount` tính phí hàng tháng là $10.000$ đồng. Loại `NickelNDime` tính phí theo số lần rút tiền, phí cho mỗi lần rút là $2.000$ đồng, cuối tháng mới thu. Loại `Gambler` không tính phí cuối tháng nhưng thu phí tại từng lần rút tiền theo xác suất như sau: Với xác suất $49\\%$, tài khoản không bị hụt đi đồng nào và giao dịch thành công miễn phí. Với xác suất $51\\%$, phí rút tiền bằng đúng số tiền rút được.
+Một ngân hàng cho phép người dùng lập các loại tài khoản bao gồm: `NormalAccount`, `NickelNDime`, `Gambler`. Thông tin về mỗi tài khoản ngân hàng gồm có số dư hiện tại và số giao dịch đã thực hiện kể từ đầu tháng. Mỗi tài khoản cần đáp ứng các thao tác sau: gửi tiền, rút tiền, và lấy thông tin phí tài khoản trong tháng gần nhất. Phí tài khoản được tính tuỳ theo từng loại tại khoản. Loại `NormalAccount` tính phí hàng tháng là $10.000$ đồng. Loại `NickelNDime` tính phí theo số lần rút tiền, phí cho mỗi lần rút là $2.000$ đồng, cuối tháng mới thu. Loại `Gambler` không tính phí cuối tháng nhưng thu phí tại từng lần rút tiền theo xác suất như sau: Với xác suất 49%, tài khoản không bị hụt đi đồng nào và giao dịch thành công miễn phí. Với xác suất 51%, phí rút tiền bằng đúng số tiền rút được.
 
 **1.** Vẽ biểu đồ thiết kế các lớp cho hệ thống trên sử dụng trừu tượng và thừa kế một cách hợp lý để tái sử dụng và tránh lặp code. `(2 điểm)`
 
@@ -176,3 +208,8 @@ Một ngân hàng cho phép người dùng lập các loại tài khoản bao g�
 - Không cho phép rút số tiền vượt quá số dư hiện tại.
 
 Gợi ý, tạo lớp ngoại lệ `InvalidAmountException` và `InsufficientFundsException`.
+
+<details><summary><strong>Bài giải</strong></summary>
+
+quá lười để viết :D
+</details>
