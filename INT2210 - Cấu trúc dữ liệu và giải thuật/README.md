@@ -4,5 +4,4 @@
 ### Học kỳ II năm học 2024 - 2025
 ### Author: me
 
-![image](https://github.com/user-attachments/assets/39272718-3b90-4800-b1fb-12528c6b0ee9)
-
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/e7b60a12-67f5-4dc2-9af3-92fbee4d538c" />
