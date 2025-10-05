@@ -8,7 +8,7 @@ signed main() {
   cin >> path;
   map<char, int> cnt;
   ifstream in(path);
-  for (string s; getline(in, path); ) {
+  for (string s; in >> s; ) {
     for (char c : s) {
       ++cnt[c];
     }
