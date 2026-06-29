@@ -57,10 +57,11 @@ using namespace std;
 int main() {
   int n, k;
   cin >> n >> k;
-  vector<int> pref(n+1, 0);
-  for (int i = 0; i < n; ++i) {
-    cin >> pref[i];
-    pref[i] = (pref[i] + pref[i-1]) % k;
+  vector<int> pref(n + 1, 0);
+  for (int i = 1; i <= n; ++i) {
+    int x;
+    cin >> x;
+    pref[i] = (pref[i - 1] + x) % k;
   }
   vector<int> cnt(k, 0);
   for (int x : pref) {
