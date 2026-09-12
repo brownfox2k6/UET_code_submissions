@@ -1,4 +1,5 @@
-[![starline](https://starlines.qoo.monster/assets/brownfox2k6/UET_code_submissions)](https://github.com/brownfox2k6/UET_code_submissions)  
+![repo starline](/starlines/brownfox2k6/UET_code_submissions/starline.svg)
+
 Welcome to my little archive of code for some courses at [VNU University of Engineering and Technology](https://uet.vnu.edu.vn).  
 Think of it as my personal *Hall of Submissions*—full of late nights, bug hunts, and way too much coffee.
 
